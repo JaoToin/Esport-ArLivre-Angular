@@ -30,9 +30,6 @@ main {
   flex: 1;
 }
 
-footer {
-  margin-top: auto;
-}
 
 #pe{
   margin: 100px 0px 0px 0px ;
@@ -42,7 +39,17 @@ footer {
   color: var(--of);
 }
 
-ul{
+#ul{
   text-align: center;
-  margin: x;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+
+.li{
+  margin: 75px 35px 0px 0px;
+  list-style: none;
 }
+
+
