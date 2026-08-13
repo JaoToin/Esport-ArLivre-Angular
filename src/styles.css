@@ -13,7 +13,36 @@
   --of:#ffff;
   --hover-link:#dcb2ff;
   --remover:#ff0000;
-  
 
 
+
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+/* Opcional: faz o conteúdo principal ocupar o espaço restante */
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+#pe{
+  margin: 100px 0px 0px 0px ;
+  height: 100%;
+  min-height: 150px;
+  background-color: var(--cor-principal);
+  color: var(--of);
+}
+
+ul{
+  text-align: center;
+  margin: x;
 }
