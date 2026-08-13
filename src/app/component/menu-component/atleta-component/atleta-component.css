@@ -1,0 +1,90 @@
+#div-form{
+  width: 1000px;
+  min-height: 650px;
+  margin: 20px auto;
+  padding: 25px;
+
+}
+
+
+input[type=radio]{
+  width: 25px;
+  height: 25px;
+  margin: 0px 10px;
+
+}
+
+input[type=radio]{
+ 
+
+}
+
+
+label{
+  display: block;
+  margin: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+input{
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: var(--cor-principal);
+}
+
+
+.input01{
+  width: 650px;
+  height: 30px;
+  }
+
+.input02{
+  width: 350px;
+}
+
+input{
+  margin: 5px;
+}
+
+#div-bnts{
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button{
+  width: 200px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#bntAdd{
+  background-color: var(--cor-principal);
+  color: var(--of);
+}
+
+#bntAdd:hover{
+  opacity: 0.5;
+  transform: translateY(-5);
+}
+
+#bntLimpar{
+  background-color: var(--remover);
+  color: var(--of);
+}
+
+#bntLimpar:hover{
+  opacity: 0.5;
+  transform: translateY(-5);
+
+}

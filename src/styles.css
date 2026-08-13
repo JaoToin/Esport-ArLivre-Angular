@@ -3,14 +3,17 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 :root{
-  --cor-principal:#ff0000;
+  --cor-principal:#22009c;
   --cor-secundaria:#00c3ff;
   --cor-terciaria:#126e12;
   --of:#ffff;
-  --hover-link:#ffff;
+  --hover-link:#dcb2ff;
+  --remover:#ff0000;
   
+
 
 }
