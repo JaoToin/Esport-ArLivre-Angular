@@ -1,6 +1,6 @@
 <div id="div-form">
 
-  <form id="form-atleta">
+  <form id="form-atleta" (submit)="salvarAtleta()">
 
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome" class="input01" required maxlength="80" placeholder="Informe seu nome" [(ngModel)]="nome">
@@ -30,7 +30,7 @@
     <input type="text" name="uf" id="uf" class="input02" required maxlength="2" placeholder="Informe seu UF" [(ngModel)]="uf">
 
     <div id="div-bnts">
-      <button type="button" id="bntAdd" (click)="exibeDados()">Cadastrar Atleta</button>
+      <button type="submit" id="bntAdd" >Cadastrar Atleta</button>
       <button type="reset" id="bntLimpar" (click)="limpar()">Limpar Dados</button>
 
     </div>
