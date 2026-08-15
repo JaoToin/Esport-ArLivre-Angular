@@ -1,11 +1,12 @@
 import { Pessoa } from '../models/pessoa';
-import { Injectable } from '../../../node_modules/@angular/core/types/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AtletaService {
   private atleta: Pessoa[] =[]
+
 
   adicionar (pessoa: Pessoa){
     //ARMENGUE PARA GERAR ID
@@ -34,4 +35,5 @@ export class AtletaService {
       this.atleta[posArray] = pessoa
     }
   }
+
 }

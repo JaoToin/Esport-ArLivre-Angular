@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-
-import { Home } from './component/menu-component/home/home';
-import { AtletaComponent } from './component/menu-component/atleta-component/atleta-component';
+import { CadastroCorrida } from './component/cadastro-corrida/cadastro-corrida';
+import { Home } from './component/home/home';
+import { AtletaComponent } from './component/atleta-component/atleta-component';
+import { Component } from '../../node_modules/@angular/compiler/types/compiler';
 
 export const routes: Routes = [
   {
@@ -17,5 +18,12 @@ export const routes: Routes = [
   {
     path: "cadastroAtleta",
     component: AtletaComponent
+  },
+
+  {
+    path: "cadastroCorrida",
+    component: CadastroCorrida
   }
+
+
 ];

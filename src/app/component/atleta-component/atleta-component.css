@@ -6,6 +6,14 @@
 
 }
 
+h1{
+  margin: 20px 0px 35px 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.8em;
+
+}
+
 
 input[type=radio]{
   width: 100%;
