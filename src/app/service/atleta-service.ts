@@ -1,39 +1,80 @@
-import { Pessoa } from '../models/pessoa';
+import { Pessoa } from './../models/pessoa';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AtletaService {
-  private atleta: Pessoa[] =[]
+  //DECLARAÇÃO CONSTRUTOR
+  constructor(private http: HttpClient) { }
+
+  //ADICIONAR NA API
+  adicionarAtleta(atleta: Pessoa): Observable<Pessoa> {
+    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta`
+
+    return this.http.post<Pessoa>(urlApi, atleta)
+  }
+
+  //LISTAR ATLETAS NA API
+  listarAtletas(): Observable<Pessoa[]> {
+    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta`
+
+    return this.http.get<Pessoa[]>(urlApi)
+  }
+
+  //LISTAR ATLETA
+  listarAtleta(idAtleta: number):Observable<Pessoa>{
+    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${idAtleta}`
+
+    return this.http.get<Pessoa>(urlApi)
+  }
+
+  //EXCLUIR NA API
+  exluirAtleta(atleta: Pessoa): Observable<Pessoa> {
+    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${atleta.id}`
+
+    return this.http.delete<Pessoa>(urlApi)
+  }
+
+  //ALTERAR NA API
+  alterarAtleta(atleta: Pessoa):Observable<Pessoa>{
+    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${atleta.id}`
+
+    return this.http.put<Pessoa>(urlApi, atleta)
+  }
+
+  /*private Pessoa: Pessoa[] =[]
 
 
   adicionar (pessoa: Pessoa){
     //ARMENGUE PARA GERAR ID
-    pessoa.id = this.atleta.length + 1
+    pessoa.id = this.Pessoa.length + 1
 
-    this.atleta.push(pessoa)
+    this.Pessoa.push(pessoa)
   }
 
   listar(){
-    console.table(this.atleta)
-    return this.atleta
+    console.table(this.Pessoa)
+    return this.Pessoa
   }
 
-  private localizarAtleta(idAtleta: number){
-    return this.atleta.findIndex(elem => elem.id === idAtleta)
+  private localizarPessoa(idPessoa: number){
+    return this.Pessoa.findIndex(elem => elem.id === idPessoa)
   }
 
   remover(posicaoArray: number){
-    this.atleta.splice(1,posicaoArray)
+    this.Pessoa.splice(1,posicaoArray)
   }
 
   alterar(pessoa : Pessoa){
-    let posArray = this.localizarAtleta(pessoa.id)
+    let posArray = this.localizarPessoa(pessoa.id)
 
     if(posArray >= 0){
-      this.atleta[posArray] = pessoa
+      this.Pessoa[posArray] = pessoa
     }
   }
-
+*/
 }

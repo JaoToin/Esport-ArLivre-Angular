@@ -1,0 +1,39 @@
+<div id="div-form">
+  <h2>Cadastro Atleta </h2>
+
+  <form id="form-atleta" (ngSubmit)="">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" [(ngModel)]="" id="nome" class="input01" required maxlength="80" placeholder="Informe seu nome">
+
+      <label for="cpf">CPF</label>
+      <input type="text" name="cpf" [(ngModel)]="" id="cpf" class="input02" required maxlength="14" placeholder="Informe seu cpf">
+
+      <label for="sexo">sexo</label>
+      <input type="radio" name="sexo" id="sexoM" class="btnSelecao" value="M" [(ngModel)]=""> Masculino
+      <input type="radio" name="sexo" id="sexoF" class="btnSelecao" value="F" [(ngModel)]=""> Feminino
+      <input type="radio" name="sexo" id="sexoN" class="btnSelecao" value="N"  [(ngModel)]=""> Não se Identificar
+
+      <label for="cep">CEP</label>
+      <input type="text" name="cep"  [(ngModel)]="" id="cep" class="input02" required maxlength="9" placeholder="Informe seu cep" >
+
+      <label for="rua_logradouro">Rua/Logradouro</label>
+      <input type="text" name="rua_logradouro"  [(ngModel)]="" id="rua_logradouro" class="input01" required maxlength="100" placeholder="Informe rua/logradouro">
+
+      <label for="bairro">Bairro</label>
+      <input type="text" name="bairro"  [(ngModel)]="" id="bairro" class="input02" required maxlength="20"
+          placeholder="Informe seu bairro">
+
+      <label for="cidade">Cidade</label>
+      <input type="text" name="cidade"  [(ngModel)]="" id="cidade" class="input02" required maxlength="60"
+          placeholder="Informe seu cidade">
+
+      <label for="uf">UF</label>
+      <input type="text" name="uf" [(ngModel)]="" id="uf" class="input02" required maxlength="2" placeholder="Informe seu uf">
+
+      <div id="div-btns">
+          <button type="submit" id="btnAdd">{{editar ? 'Alterar' : 'Salvar'}}Atleta </button>
+          <button type="reset" id="btnLimpar"> Cadastrar Atleta </button>
+      </div>
+
+  </form>
+</div>
