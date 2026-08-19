@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-
+import { CorridaComponent } from './app/component/corrida/corrida-component/corrida-component';
 import { Home} from './app/component/home/home';
-import { AtletaComponent } from './app/component/atleta-component/atleta-component';
-import { AtletaListaComponent } from './app/component/atleta-lista-component/atleta-lista-component';
+import { AtletaComponent } from './app/component/Atleta/atleta-component/atleta-component';
+import { AtletaListaComponent } from './app/component/Atleta/atleta-lista-component/atleta-lista-component';
 
 export const routes: Routes = [
     {
@@ -28,5 +28,8 @@ export const routes: Routes = [
     },
     {
         path:"cadastrocorrida",
-        component:AtletaComponent
-    }]
+        component:CorridaComponent
+    },
+
+
+  ]

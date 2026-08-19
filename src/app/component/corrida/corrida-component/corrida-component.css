@@ -1,9 +1,11 @@
 #div-form{
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   min-height: 650px;
   margin: 20px auto;
   padding: 25px;
-  box-shadow: 5px 5px 5px 5px black
+  box-shadow: 5px 5px 5px 5px black;
+  border-radius: 10px;
 
 }
 
@@ -16,7 +18,7 @@ h1{
 }
 
 
-input[type=radio]{
+input[type=checkbox]{
   width: 100%;
   max-width: 25px;
   height: 100%;
@@ -33,33 +35,26 @@ label{
   letter-spacing: 2px;
 }
 
-input{
+input, textarea{
   padding: 10px;
   font-size: 14px;
   border-radius: 10px;
   border-top: none;
   border-left: none;
-  border-right: none;
   border-color: var(--cor-principal);
   box-sizing: border-box;
 }
 
-
-.input01{
+input, textarea{
   width: 100%;
   max-width: 650px;
-  }
-
-.input02{
-  width: 100%;
-  max-width: 350px;
 }
 
 input{
   margin: 5px;
 }
 
-#div-bnts{
+#div-btns{
   width: 100%;
   height: 180px;
   display: flex;
@@ -74,25 +69,17 @@ button{
   border: none;
   margin: 10px;
   border-radius: 10px;
-}
-
-#bntAdd{
   background-color: var(--cor-principal);
   color: var(--of);
 }
 
-#bntAdd:hover{
+button:hover{
   opacity: 0.5;
   transform: translateY(-5);
 }
 
-#bntLimpar{
-  background-color: var(--remover);
-  color: var(--of);
-}
-
-#bntLimpar:hover{
-  opacity: 0.5;
-  transform: translateY(-5);
+textarea{
+  resize: none;
+  height: 100px;
 
 }

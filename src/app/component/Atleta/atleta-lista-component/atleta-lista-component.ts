@@ -1,6 +1,6 @@
-import { Pessoa } from './../../models/pessoa';
+import { Pessoa } from './../../../models/pessoa';
 import { Component, signal } from '@angular/core';
-import { AtletaService } from '../../service/atleta-service';
+import { AtletaService } from '../../../service/atleta-service';
 //import { Pessoa } from '../../models/Atleta';
 import { Router } from '@angular/router';
 

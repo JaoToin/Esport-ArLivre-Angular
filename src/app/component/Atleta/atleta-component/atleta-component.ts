@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AtletaService } from './../../service/atleta-service';
-import { Pessoa } from '../../models/pessoa';
+import { AtletaService } from '../../../service/atleta-service';
+import { Pessoa } from '../../../models/pessoa';
 import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 

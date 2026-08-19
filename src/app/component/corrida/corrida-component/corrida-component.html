@@ -1,0 +1,21 @@
+<div id="div-form">
+  <h1>Cadastro De Corrida </h1>
+
+  <form id="form-atleta">
+      <label for="descricao">Descrição</label>
+      <textarea name="descricao" id="descricao" cols="30" placeholder="Descreva a Corrida" rows="10"></textarea>
+
+      <label for="data">Data De Corrida</label>
+      <input type="date" name="data" id="data" required>
+
+      <label for="distancia">Distância</label>
+      <input type="checkbox" name="5km" id="distancia" class="btnSelecao" value="5"> 5km
+      <input type="checkbox" name="10km" id="distancia" class="btnSelecao" value="10"> 10km
+      <input type="checkbox" name="25km" id="distancia" class="btnSelecao" value="25" > 25km
+
+      <div id="div-btns">
+          <button type="submit" id="btnAdd">Cadastrar Corrida</button>
+      </div>
+
+  </form>
+</div>
