@@ -3,6 +3,7 @@ import { CorridaComponent } from './app/component/corrida/corrida-component/corr
 import { Home} from './app/component/home/home';
 import { AtletaComponent } from './app/component/Atleta/atleta-component/atleta-component';
 import { AtletaListaComponent } from './app/component/Atleta/atleta-lista-component/atleta-lista-component';
+import { TabelaComponent } from './app/component/corrida/tabela-component/tabela-component';
 
 export const routes: Routes = [
     {
@@ -30,6 +31,12 @@ export const routes: Routes = [
         path:"cadastrocorrida",
         component:CorridaComponent
     },
+
+    {
+      path:"cadastroTabela",
+      component:TabelaComponent
+  },
+
 
 
   ]

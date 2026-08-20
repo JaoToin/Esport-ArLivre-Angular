@@ -1,38 +1,77 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Corrida } from '../models/corrida';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CorridaService{
-  private corrida: Corrida[] = []
+export class CorridaService {
+  constructor(private http: HttpClient) {}
 
-  adicionarCorrida (run: Corrida){
+  salvarCorrida(corrida: Corrida) {
+    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida`;
 
-    run.id = this.corrida.length + 1
-
-    this.corrida.push(run)
+    this.http.post<Corrida>(urlAPi, corrida)
+      .subscribe({
+        next: (respostaAPI) => {
+          return respostaAPI
+        },
+        error: (msgErro) => {
+          return msgErro
+        }
+      })
   }
 
-  listarCorrida(){
-    console.table(this.corrida)
-    return this.corrida
+  listarCorridas():Corrida[] {
+    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida`;
+
+    this.http.get<Corrida[]>(urlAPi)
+      .subscribe({
+        next: (corridasAPI) => {
+          return corridasAPI
+        },
+        error: (msgErro) => {
+          return msgErro
+        }
+      })
+
+      return[]
   }
 
-  private localizarCorrida(idCorrida: number){
-    return this.corrida.findIndex(elem => elem.id === idCorrida)
+
+  listarCorrida(idCorrida: Number): Partial<Corrida>{
+    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida/${idCorrida}`;
+
+   return this.http.get<Corrida>(urlAPi)
+
+
   }
 
-  remover(posicaoArray: number){
-    this.corrida.splice(1,posicaoArray)
+  excluirCorrida(idCorrida: Number){
+    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida/${idCorrida}`;
+
+    this.http.delete<Corrida>(urlAPi)
+      .subscribe({
+        next: (repostaAPI) => {
+          return repostaAPI
+        },
+        error: (msgErro) => {
+          return msgErro
+        }
+      })
   }
 
-  alterar(run : Corrida){
-    let posArray = this.localizarCorrida(run.id)
+  alterarCorrida( corrida: Corrida){
+    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida/${corrida.id}`;
 
-    if(posArray >= 0){
-      this.corrida[posArray] = run
-    }
+    this.http.put<Corrida>(urlAPi, Corrida)
+      .subscribe({
+        next: (repostaAPI) => {
+          return repostaAPI
+        },
+        error: (msgErro) => {
+          return msgErro
+        }
+      })
   }
-
 }

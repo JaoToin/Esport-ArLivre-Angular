@@ -1,44 +1,55 @@
-#div-lista{
+/* ==========================================================================
+   RESET BÁSICO E ESTRUTURA GERAL
+   ========================================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#div-lista {
   width: 100%;
   min-height: 650px;
-  margin: 20px auto;
   padding: 25px;
-  border-radius: 10px;
   text-align: center;
+  /* Centraliza os elementos filhos (como o h1 e o #lista-atletas) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-table{
-  text-align: center;
-}
-
-h1{
+h1 {
   margin: 20px 0px 35px 0px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 1.8em;
-
 }
 
-.div-item-pessoa{
-  color: black;
-}
-
-#lista-atletas{
-  background-color: var(--cor-card);
+/* Unificamos todas as 3 declarações do #lista-atletas em uma só */
+#lista-atletas {
+  background-color: var(--cor-card, #ffffff);
   width: 100%;
   max-width: 1200px;
+  /* margin: 0 auto centraliza o container na tela */
+  margin: 0 auto;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  overflow-x: auto; /* Permite rolagem no celular */
+
+  /* IMPORTANTE para a responsividade funcionar sem quebrar o layout */
+  display: block;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px; /* Aumentado para caber as novas colunas */
+  min-width: 800px; /* Força a tabela a rolar em telas menores que 800px */
+  margin: 0 auto; /* Centraliza a própria tabela dentro do container */
 }
 
+/* O restante do seu código de estilização da tabela se mantém igual */
 caption {
   font-size: 1.5em;
   color: var(--cor-primaria);
@@ -48,116 +59,44 @@ caption {
   text-align: left;
 }
 
+/* Agrupando as regras do th para evitar repetição */
 th {
-  background-color: var(--cor-principal);
-  color:black;
-  text-align: left;
+  background-color: #1E3A8A;
+  color: #F3F4F6;
+  text-align: center;
   padding: 15px;
   font-size: 0.9em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-th{
-  text-align: center;
-}
-
-th{
-background-color: #1E3A8A;
-color: #F3F4F6;
-}
-
-.lnk-excluir{
-background-color: rgb(255, 0, 0);
-color:var(--of);
-}
-
-.lnk-editar{
-background-color: #0044ff;
-color: var(--of);
-}
-
-
-th:first-child {
-  border-top-left-radius: 8px;
-}
-th:last-child {
-  border-top-right-radius: 8px;
-}
+th:first-child { border-top-left-radius: 8px; }
+th:last-child { border-top-right-radius: 8px; }
 
 td {
   padding: 15px;
-  border-bottom: 1px solid var(--cor-borda);
-  color: var(--cor-texto);
+  border-bottom: 1px solid var(--cor-borda, #ccc);
+  color: var(--cor-texto, #333);
   font-size: 0.95em;
+  text-align: center; /* Centraliza o texto das células */
 }
 
-tbody tr:nth-child(even) {
-  background-color: #F8FAFC;
-}
+tbody tr:nth-child(even) { background-color: #F8FAFC; }
+tbody tr:hover { background-color: #E2E8F0; transition: background-color 0.2s ease; }
 
-tbody tr:hover {
-  background-color: #E2E8F0;
-  transition: background-color 0.2s ease;
-}
-
-
-td:nth-last-child(2) {
-  color: var(--of); /* Azul para Editar */
-  font-weight: bold;
-  cursor: pointer;
-}
-
-td:nth-last-child(1) {
-  color: var(--of);     /* Vermelho para Remover */
-  font-weight: bold;
-  cursor: pointer;
-}
+.lnk-editar { color: #0044ff; font-weight: bold; cursor: pointer; }
+.lnk-excluir { color: rgb(255, 0, 0); font-weight: bold; cursor: pointer; }
 
 td:nth-last-child(1):hover,
 td:nth-last-child(2):hover {
   text-decoration: underline;
 }
 
-
-
-
-/* ==========================================================================
-   RESET BÁSICO E ESTRUTURA GERAL
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-#lista-atletas {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-
-#lista-atletas {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    gap: 20px;
-    margin-left:325px;
-}
-
-
 @media (max-width: 768px) {
-
-  table{
+    table {
         padding: 15px;
         border-radius: 8px;
     }
-
     caption {
         font-size: 1.2em;
         text-align: center;
