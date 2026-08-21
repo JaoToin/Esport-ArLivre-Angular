@@ -1,9 +1,11 @@
+import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { CorridaComponent } from './app/component/corrida/corrida-component/corrida-component';
 import { Home} from './app/component/home/home';
 import { AtletaComponent } from './app/component/Atleta/atleta-component/atleta-component';
 import { AtletaListaComponent } from './app/component/Atleta/atleta-lista-component/atleta-lista-component';
 import { TabelaComponent } from './app/component/corrida/tabela-component/tabela-component';
+import { InscricoesComponent } from './app/component/inscrições/inscricoes-component/inscricoes-component';
 
 export const routes: Routes = [
     {
@@ -41,6 +43,11 @@ export const routes: Routes = [
       path:"cadastroTabela",
       component:TabelaComponent
   },
+
+  {
+    path:"inscricoes",
+    component:InscricoesComponent
+  }
 
 
 
