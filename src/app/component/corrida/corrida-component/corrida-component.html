@@ -1,5 +1,5 @@
 <div id="div-form">
-  <h1>Cadastro De Corrida </h1>
+  <h1>{{editar? 'Alterar' : 'Cadastrar'}} Corrida </h1>
 
   <form id="form-atleta" (submit)="dadosFormulario()">
       <label for="descricao">Descrição</label>
@@ -14,7 +14,7 @@
       <input [(ngModel)]="distancia25km" type="checkbox" name="25km" id="distancia" class="btnSelecao" value="25" > 25km
 
       <div id="div-btns">
-          <button type="submit" id="btnAdd">Cadastrar Corrida</button>
+          <button type="submit" id="btnAdd">{{editar? 'Alterar': 'Cadastrar' }} Corrida</button>
       </div>
 
   </form>

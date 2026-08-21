@@ -26,9 +26,9 @@
           <td>{{elem.distancia25km ? '25km':''}}</td>
 
           <td class="lnk-editar">
-            <a> Editar </a>
+            <a  (click)="CarregandoDados(elem)"> Editar </a>
           </td>
-          <td  class="lnk-excluir"><a (click)="excluir"> Excluir </a>
+          <td  class="lnk-excluir"><a (click)="excluir(elem)"> Excluir </a>
           </td>
         </tr>
       } @empty {
