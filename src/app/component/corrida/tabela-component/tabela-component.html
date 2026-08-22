@@ -1,0 +1,47 @@
+<div id="div-lista">
+  <h1>Lista Atleta</h1>
+
+<div id="lista-atletas">
+  <table>
+    <thead>
+      <tr>
+
+        <th>Descrição</th>
+        <th>Data</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      @for (elem of listaCorridas(); track elem.id) {
+        <tr class="item-atletas">
+          <td>{{elem.descricao}}</td>
+          <td>{{elem.data}}</td>
+          <td>{{elem.distancia5km ? '5km':''}}</td>
+          <td>{{elem.distancia10km ? '10km':''}}</td>
+          <td>{{elem.distancia25km ? '25km':''}}</td>
+
+          <td class="lnk-editar">
+            <a  (click)="CarregandoDados(elem)"> Editar </a>
+          </td>
+          <td  class="lnk-excluir"><a (click)="excluir(elem)"> Excluir </a>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <!-- O colspan="7" garante que a mensagem ocupe todas as colunas da tabela -->
+          <td colspan="7" class="div-item-pessoa" style="text-align: center;">
+            NENHUM REGISTRO NA LISTA
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+
+</div>

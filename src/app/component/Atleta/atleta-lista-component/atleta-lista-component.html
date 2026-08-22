@@ -1,0 +1,46 @@
+<div id="div-lista">
+  <h1>Lista Atleta</h1>
+
+<div id="lista-atletas">
+  <table>
+    <thead>
+      <tr>
+  
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Sexo</th>
+        <th>Cidade</th>
+        <th>UF</th>
+        <th></th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      @for (elem of listaAtletas(); track elem.id) {
+        <tr class="item-atletas">
+          <td>{{elem.nome}}</td>
+          <td>{{elem.cpf}}</td>
+          <td>{{elem.sexo}}</td>
+          <td>{{elem.cidade}}</td>
+          <td>{{elem.uf}}</td>
+          <td class="lnk-editar">
+            <a  (click)="buscarPessoa(elem)"> Editar </a>
+          </td>
+          <td  class="lnk-excluir"><a (click)="excluirAtleta(elem)"> Excluir </a>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <!-- O colspan="7" garante que a mensagem ocupe todas as colunas da tabela -->
+          <td colspan="7" class="div-item-pessoa" style="text-align: center;">
+            NENHUM REGISTRO NA LISTA
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+
+</div>

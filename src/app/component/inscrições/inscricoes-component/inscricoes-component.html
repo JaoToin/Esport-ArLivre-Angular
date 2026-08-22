@@ -1,0 +1,59 @@
+<div id="div-form">
+  <h1>Inscrições</h1>
+
+  <form id="form-atleta" (submit)="salvarInscricao()">
+
+    <label for="atletas" >Atletas</label>
+    <select id="atletas" [(ngModel)]="atleta" name="atleta">
+      <option value="" disabled selected>Selecione Um Atleta</option>
+
+      @for (item of atletas; track item.id) {
+        <option [value]="item.nome">{{ item.nome }}</option>
+      }
+    </select>
+
+    <label for="corrida">Corridas</label>
+<select id="corrida" [(ngModel)]="corrida" name="corrida">
+  <option value="" disabled selected>Selecione A Corrida</option>
+
+  @for (item of corridas; track item.id) {
+    <option [value]="item.nome">{{ item.nome }}</option>
+  }
+</select>
+
+    <label for="Tamanho">Tamanho de Camisas(kit)</label>
+    <select name="Tamanho" id="Tamanho" [(ngModel)]="tamanho">
+      <option value="P">P</option>
+      <option value="M">M</option>
+      <option value="G">G</option>
+      <option value="GG">GG</option>
+
+    </select>
+
+    <label for="categoria">Categoria/Faixa Etária</label>
+    <input
+      type="text"
+      [(ngModel)]="categoria"
+      name="nome"
+      id="categoria"
+      class="input01"
+      required
+      maxlength="80"
+      placeholder="Informe a Categoria"
+    />
+
+    <label for="distancia">Distância</label>
+    <input [(ngModel)]="distancia" type="radio" name="5km" id="distancia" class="btnSelecao" value="5" /> 5km
+    <input [(ngModel)]="distancia" type="radio" name="10km" id="distancia" class="btnSelecao" value="10" /> 10km
+    <input [(ngModel)]="distancia" type="radio" name="25km" id="distancia" class="btnSelecao" value="25" /> 25km
+
+    <label for="valor" id="valor">Valor Da Inscrição: <span>R$ 250</span></label>
+
+    <input type="checkbox" /> Li e estou de acordo com os termos do regulamento da prova e
+    declaração de saúde
+
+    <div id="div-btns">
+      <button type="submit" id="btnAdd">Finalizar Inscrição e Ir Para o Pagamento</button>
+    </div>
+  </form>
+</div>
