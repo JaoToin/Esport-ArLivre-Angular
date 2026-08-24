@@ -5,8 +5,9 @@
   <table>
     <thead>
       <tr>
-  
+
         <th>Nome</th>
+        <th>Idade</th>
         <th>CPF</th>
         <th>Sexo</th>
         <th>Cidade</th>
@@ -20,6 +21,7 @@
       @for (elem of listaAtletas(); track elem.id) {
         <tr class="item-atletas">
           <td>{{elem.nome}}</td>
+          <td>{{calcIdade(elem.data_nascimento)}}</td>
           <td>{{elem.cpf}}</td>
           <td>{{elem.sexo}}</td>
           <td>{{elem.cidade}}</td>

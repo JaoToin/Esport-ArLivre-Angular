@@ -8,4 +8,5 @@ export class Pessoa{
   bairro: string = ''
   cidade: string = ''
   uf: string = ''
+  data_nascimento: string = ''
 }
