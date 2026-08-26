@@ -23,6 +23,7 @@
 
     <label for="Tamanho">Tamanho de Camisas(kit)</label>
     <select name="Tamanho" id="Tamanho" [(ngModel)]="tamanho">
+      <option value="" disabled>Selecione o Tamanho</option>
       <option value="P">P</option>
       <option value="M">M</option>
       <option value="G">G</option>
@@ -31,16 +32,19 @@
     </select>
 
     <label for="categoria">Categoria/Faixa Etária</label>
-    <input
-      type="text"
-      [(ngModel)]="categoria"
-      name="nome"
-      id="categoria"
-      class="input01"
-      required
-      maxlength="80"
-      placeholder="Informe a Categoria"
-    />
+
+    <select [(ngModel)]="categoria" name="categoria" required id="categoria">
+      <option value="" disabled>Selecione a Categoria</option>
+    <option value="M 17 á 30">Masculino entre 17 á 30</option>
+    <option value="M 31 á 45">Masculino entre 31 á 45</option>
+    <option value="M 46 á 60+">Masculino entre 46 á 60+</option>
+    <option value="F 17 á 30">Feminino entre 17 á 30</option>
+    <option value="F 31 á 45">Feminino entre 31 á 45</option>
+    <option value="F 46 á 60+">Feminino entre 46 á 60+</option>
+
+
+  </select>
+
 
     <label for="distancia">Distância</label>
     <input [(ngModel)]="distancia" type="radio" name="5km" id="distancia" class="btnSelecao" value="5" /> 5km
@@ -49,9 +53,10 @@
 
     <label for="valor" id="valor">Valor Da Inscrição: <span>R$ 250</span></label>
 
-    <input type="checkbox" /> Li e estou de acordo com os termos do regulamento da prova e
+    <div id="termos">
+    <input type="checkbox" id="termos" /> Li e estou de acordo com os termos do regulamento da prova e
     declaração de saúde
-
+    </div>
     <div id="div-btns">
       <button type="submit" id="btnAdd">Finalizar Inscrição e Ir Para o Pagamento</button>
     </div>
