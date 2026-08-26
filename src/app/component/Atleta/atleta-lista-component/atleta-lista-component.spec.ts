@@ -4,7 +4,6 @@ import { AtletaService } from '../../../service/atleta-service';
 import { AtletaListaComponent } from './atleta-lista-component';
 import {provideHttpClient} from '@angular/common/http'
 import {provideHttpClientTesting, HttpTestingController} from '@angular/common/http/testing'
-import { Atleta } from '../../../models/atleta';
 
 describe('AtletaListaComponent', () => {
   let component: AtletaListaComponent;
@@ -95,7 +94,7 @@ describe('AtletaListaComponent', () => {
       requisicao.flush(atleta)
     })
 
-   
+
     it('Resultado Esperado Excluir Atleta', () => {
       const atleta: Pessoa = {
         "nome": "João",
