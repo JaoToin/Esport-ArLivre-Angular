@@ -17,7 +17,7 @@
   <option value="" disabled selected>Selecione A Corrida</option>
 
   @for (item of corridas; track item.id) {
-    <option [value]="item.nome">{{ item.nome }}</option>
+    <option [value]="item.descricao_corrida">{{ item.descricao_corrida }}</option>
   }
 </select>
 

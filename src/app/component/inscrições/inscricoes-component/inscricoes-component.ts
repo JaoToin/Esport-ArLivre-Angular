@@ -58,7 +58,7 @@ ngOnInit() {
     this.selectCorridaAtletaService.getCorridas()
     .subscribe({
       next: (corridas) => {
-        this.corridas = [...corridas].sort((a, b) =>(a.nome || '').localeCompare(b.nome));
+        this.corridas = [...corridas].sort((a, b) =>(a.descricao_corrida || '').localeCompare(b.descricao_corrida));
       },
       error: (error) => {
         console.log('Erro ao carregar corridas:', error);
@@ -69,7 +69,7 @@ ngOnInit() {
     salvarInscricao(){
       const inscricao: Inscricao = new Inscricao();
       inscricao.atleta = this.atleta;
-      inscricao.corrida = this.corrida;
+      inscricao.descricao_corrida = this.corrida;
       inscricao.tamanho = this.tamanho;
       inscricao.categoria = this.categoria;
       inscricao.distancia = this.distancia;
