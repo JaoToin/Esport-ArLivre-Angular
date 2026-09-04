@@ -33,12 +33,12 @@ export class TabelaComponent {
   }
 
   excluir(objCorrida: Corrida){
-    if(confirm(`Deseja Excluir A Corrida ${objCorrida.descricao}`)){
-      this.CorridaService.excluirCorrida(objCorrida.id)
+    if(confirm(`Deseja Excluir A Corrida ${objCorrida.descricao_corrida}`)){
+      this.CorridaService.excluirCorrida(objCorrida.idcorrida)
 
       .subscribe({
         next: (respostaAPI) => {
-          this.listaCorridas.update(elem => elem.filter(a => a.id !== objCorrida.id))
+          this.listaCorridas.update(elem => elem.filter(a => a.idcorrida !== objCorrida.idcorrida))
           console.log('Atleta Excluído Com Sucesso', respostaAPI)
         },
       error: (msgErro) => {
@@ -51,6 +51,6 @@ export class TabelaComponent {
   }
 
   CarregandoDados(objCorrida: Corrida){
-    this.router.navigate(["/cadastrocorrida", objCorrida.id])
+    this.router.navigate(["/cadastrocorrida", objCorrida.idcorrida])
   }
 }

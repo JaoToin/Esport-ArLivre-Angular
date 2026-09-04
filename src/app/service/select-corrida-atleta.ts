@@ -3,6 +3,8 @@ import {Atleta} from '../models/atleta';
 import {selectCorrida} from '../models/corrida-select';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { Inscricao } from '../models/inscricao';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,13 @@ export class SelectCorridaAtletaService {
   }
 
   getCorridas(): Observable<selectCorrida[]> {
-    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida`
+    const urlAPi = `http://127.0.0.1:8000/corrida/`
     return this.http.get<selectCorrida[]>(urlAPi);
+  }
+
+  adicionarAtleta(inscricao: Inscricao): Observable<Inscricao> {
+    const urlApi = `http://127.0.0.1:8000/inscricao`
+
+    return this.http.post<Inscricao>(urlApi, inscricao)
   }
 }

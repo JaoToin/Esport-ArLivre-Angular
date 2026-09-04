@@ -12,7 +12,7 @@ export class CorridaService {
 
   //SALVAR A CORRIDA
   salvarCorrida(corrida: Corrida):Observable<Corrida> {
-    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida`
+    const urlAPi = `http://127.0.0.1:8000/corrida/`
 
     return this.http.post<Corrida>(urlAPi, corrida)
 
@@ -20,7 +20,7 @@ export class CorridaService {
 
   //LISTAR TODAS AS CORRIDAS
   listarCorridas(): Observable<Corrida[]> {
-    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida`
+    const urlAPi = `http://127.0.0.1:8000/corrida/`
 
     return this.http.get<Corrida[]>(urlAPi)
 
@@ -28,7 +28,7 @@ export class CorridaService {
 
   //LISTAR UMA CORRIDA
   listarCorrida(idCorrida: Number): Observable<Corrida> {
-    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida/${idCorrida}`
+    const urlAPi = `http://127.0.0.1:8000/corrida/${idCorrida}`
 
     return this.http.get<Corrida>(urlAPi)
 
@@ -36,7 +36,7 @@ export class CorridaService {
 
   //EXCLUIR UMA CORRIDA
   excluirCorrida(idCorrida: Number) {
-    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida/${idCorrida}`
+    const urlAPi = `http://127.0.0.1:8000/corrida/${idCorrida}`
 
     return this.http.delete<Corrida>(urlAPi)
 
@@ -44,7 +44,7 @@ export class CorridaService {
 
   //ALTERAR CORRIDA
   alterarCorrida(corrida: Corrida): Observable<Corrida> {
-    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/corrida/${corrida.id}`
+    const urlAPi = `http://127.0.0.1:8000/corrida/${corrida.idcorrida}`
 
     return this.http.put<Corrida>(urlAPi, corrida)
 

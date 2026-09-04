@@ -64,7 +64,7 @@ export class AtletaService {
     return idade
   }
 
-  /////////////////////////////////// calc imc 
+  /////////////////////////////////// calc imc
 
   CalcIMC(peso: number, altura:number): number {
     if (altura<=0) return 0;

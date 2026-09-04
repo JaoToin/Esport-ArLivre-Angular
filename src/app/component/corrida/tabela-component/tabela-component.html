@@ -17,13 +17,13 @@
       </tr>
     </thead>
     <tbody>
-      @for (elem of listaCorridas(); track elem.id) {
+      @for (elem of listaCorridas(); track elem.idcorrida) {
         <tr class="item-atletas">
-          <td>{{elem.descricao}}</td>
-          <td>{{elem.data}}</td>
-          <td>{{elem.distancia5km ? '5km':''}}</td>
-          <td>{{elem.distancia10km ? '10km':''}}</td>
-          <td>{{elem.distancia25km ? '25km':''}}</td>
+          <td>{{elem.descricao_corrida}}</td>
+          <td>{{elem.data_corrida}}</td>
+          <td>{{elem.distancia_5km ? '5km':''}}</td>
+          <td>{{elem.distancia_10km ? '10km':''}}</td>
+          <td>{{elem.distancia_25km ? '25km':''}}</td>
 
           <td class="lnk-editar">
             <a  (click)="CarregandoDados(elem)"> Editar </a>

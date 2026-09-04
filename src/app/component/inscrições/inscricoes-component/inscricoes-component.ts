@@ -67,10 +67,10 @@ ngOnInit() {
   }
 
     salvarInscricao(){
-      const inscricao: Inscricao = new Inscricao();
+      const inscricao = new Inscricao();
       inscricao.atleta = this.atleta;
       inscricao.descricao_corrida = this.corrida;
-      inscricao.tamanho = this.tamanho;
+      inscricao.tamanho_camisa = this.tamanho;
       inscricao.categoria = this.categoria;
       inscricao.distancia = this.distancia;
 

@@ -38,14 +38,14 @@ export class CorridaComponent {
 
     const corrida = new Corrida()
 
-    corrida.descricao = this.descricao
-    corrida.data = this.data
-    corrida.distancia5km = this.distancia5km
-    corrida.distancia10km = this.distancia10km
-    corrida.distancia25km = this.distancia25km
+    corrida.descricao_corrida = this.descricao
+    corrida.data_corrida = this.data
+    corrida.distancia_5km = this.distancia5km
+    corrida.distancia_10km = this.distancia10km
+    corrida.distancia_25km = this.distancia25km
 
     if (this.editar) {
-      corrida.id = this.idCorrida
+      corrida.idcorrida = this.idCorrida
 
       this.CorridaService.alterarCorrida(corrida)
         .subscribe({
@@ -78,11 +78,11 @@ export class CorridaComponent {
     this.CorridaService.listarCorrida(idCorrida)
       .subscribe({
         next: (dadosCorrida) => {
-          this.descricao = dadosCorrida.descricao
-          this.data = dadosCorrida.data
-          this.distancia5km = dadosCorrida.distancia5km
-          this.distancia10km = dadosCorrida.distancia10km
-          this.distancia25km = dadosCorrida.distancia25km
+          this.descricao = dadosCorrida.descricao_corrida
+          this.data = dadosCorrida.data_corrida
+          this.distancia5km = dadosCorrida.distancia_5km
+          this.distancia10km = dadosCorrida.distancia_10km
+          this.distancia25km = dadosCorrida.distancia_25km
 
           this.cdr.detectChanges()
         },

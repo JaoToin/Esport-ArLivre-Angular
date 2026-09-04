@@ -16,7 +16,7 @@
 <select id="corrida" [(ngModel)]="corrida" name="corrida">
   <option value="" disabled selected>Selecione A Corrida</option>
 
-  @for (item of corridas; track item.id) {
+  @for (item of corridas; track item.idcorrida) {
     <option [value]="item.descricao_corrida">{{ item.descricao_corrida }}</option>
   }
 </select>
