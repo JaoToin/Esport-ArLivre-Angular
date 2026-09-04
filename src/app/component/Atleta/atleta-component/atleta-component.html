@@ -18,6 +18,11 @@
     <input type="radio" name="sexo" id="sexoF" class="bntSelecao" value="F" [(ngModel)]="sexo">Feminino
     <input type="radio" name="sexo" id="sexoND" class="bntSelecao" value="ND" [(ngModel)]="sexo">Não Declarar
 
+    <label for="altura">Altura</label>
+    <input type="number" name="altura" id="altura" class="input02" required placeholder="Digite sua altura" [(ngModel)]="altura">
+
+    <label for="peso">Peso</label>
+    <input type="number" name="peso" id="peso" class="input02" required placeholder="Digite seu peso" [(ngModel)]="peso">
 
     <label for="cep">CEP</label>
     <input type="number" name="cep" id="cep" class="input02" required maxlength="8" placeholder="Informe seu CEP" [(ngModel)]="cep">

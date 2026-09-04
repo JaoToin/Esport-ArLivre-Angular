@@ -29,15 +29,21 @@ export class AtletaListaComponent {
     this.http.listarAtletas()
       .subscribe({
         next: (dados) => {
-          //this.listaAtletas = [...dados].sort((a, b) => a.nome.localeCompare(b.nome))
-          this.listaAtletas.set([...dados].sort((a, b) => a.nome.localeCompare(b.nome)))
+          //
+          const atletasComIMC = dados.map(atleta => {
+            atleta.imc = this.http.CalcIMC(atleta.peso, atleta.altura);
+            atleta.classificacao = this.http.classificarIMC(atleta.imc);
+            return atleta;
+          });
+
+          //
+          const listaOrdenada = atletasComIMC.sort((a, b) => a.nome.localeCompare(b.nome));
+          this.listaAtletas.set(listaOrdenada);
         },
         error: (msgErro) => {
-          console.log("Erro ao cadastrar  o atleta ", msgErro)
+          console.log("Erro ao listar os atletas ", msgErro);
         }
-
-      })
-
+      });
   }
 
   //EXCLUIR ATLETA
@@ -71,6 +77,23 @@ export class AtletaListaComponent {
   calcIdade(data_nascimento: string){
     return this.http.calcularIdade(data_nascimento)
   }
+
+
+  carregarIMC(){
+    this.http.listarAtletas().subscribe({
+      next:(dados) => {
+        const IMC = dados.map(atleta =>{
+          atleta.imc = this.http.CalcIMC(atleta.peso, atleta.altura)
+          atleta.classificacao = this.http.classificarIMC(atleta.imc)
+          return atleta
+        })
+        this.listaAtletas.set(IMC)
+      },
+
+    })
+  }
+
+
 
 
 }//FIM COMPONENT AtletaListaComponent

@@ -11,6 +11,10 @@
           <th>Sexo</th>
           <th>Cidade</th>
           <th>UF</th>
+          <th>Altura</th>
+          <th>Peso</th>
+          <th>IMC</th>
+          <th>Classificação</th>
           <th></th>
           <th></th>
         </tr>
@@ -24,6 +28,10 @@
             <td>{{ elem.sexo }}</td>
             <td>{{ elem.cidade }}</td>
             <td>{{ elem.uf }}</td>
+            <td>{{elem.altura}}</td>
+            <td>{{elem.peso}}</td>
+            <td>{{elem.imc}}</td>
+            <td>{{elem.classificacao}}</td>
             <td class="lnk-editar">
               <a (click)="buscarPessoa(elem)"> Editar </a>
             </td>
@@ -32,7 +40,7 @@
         } @empty {
           <tr>
             <!-- O colspan="7" garante que a mensagem ocupe todas as colunas da tabela -->
-            <td colspan="7" class="div-item-pessoa" style="text-align: center">
+            <td colspan="10" class="div-item-pessoa" style="text-align: center">
               NENHUM REGISTRO NA LISTA
             </td>
           </tr>

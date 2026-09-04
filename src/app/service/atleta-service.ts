@@ -8,40 +8,42 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AtletaService {
+
+
   //DECLARAÇÃO CONSTRUTOR
   constructor(private http: HttpClient) { }
 
   //ADICIONAR NA API
   adicionarAtleta(atleta: Pessoa): Observable<Pessoa> {
-    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta`
+    const urlApi = `http://127.0.0.1:8000/pessoa`
 
     return this.http.post<Pessoa>(urlApi, atleta)
   }
 
   //LISTAR ATLETAS NA API
   listarAtletas(): Observable<Pessoa[]> {
-    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta`
+    const urlApi = `http://127.0.0.1:8000/pessoa`
 
     return this.http.get<Pessoa[]>(urlApi)
   }
 
   //LISTAR ATLETA
   listarAtleta(idAtleta: number):Observable<Pessoa>{
-    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${idAtleta}`
+    const urlApi = `http://127.0.0.1:8000/pessoa/${idAtleta}`
 
     return this.http.get<Pessoa>(urlApi)
   }
 
   //EXCLUIR NA API
   exluirAtleta(atleta: Pessoa): Observable<Pessoa> {
-    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${atleta.id}`
+    const urlApi = `http://127.0.0.1:8000/pessoa/${atleta.id}`
 
     return this.http.delete<Pessoa>(urlApi)
   }
 
   //ALTERAR NA API
   alterarAtleta(atleta: Pessoa):Observable<Pessoa>{
-    const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${atleta.id}`
+    const urlApi = `http://127.0.0.1:8000/pessoa/${atleta.id}`
 
     return this.http.put<Pessoa>(urlApi, atleta)
   }
@@ -61,6 +63,27 @@ export class AtletaService {
 
     return idade
   }
+
+  /////////////////////////////////// calc imc 
+
+  CalcIMC(peso: number, altura:number): number {
+    if (altura<=0) return 0;
+    const imc = peso / (altura * altura)
+    return parseFloat(imc.toFixed(2))
+  }
+
+  classificarIMC(imc: number):string{
+    if (imc < 18.5) return 'Abaixo do peso';
+    if (imc < 25) return 'Peso normal';
+    if (imc < 30) return 'Sobrepeso';
+    if (imc < 35) return 'Obesidade Grau I' ;
+    if (imc < 40) return 'Obesidade Grau II';
+     return 'Obesidade Grau III'
+
+  }
+
+
+
 
   /*private Pessoa: Pessoa[] =[]
 

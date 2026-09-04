@@ -11,7 +11,7 @@ export class SelectCorridaAtletaService {
   constructor(private http: HttpClient) {}
 
   getAtletas(): Observable<Atleta[]> {
-    const urlAPi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta`
+    const urlAPi = `http://127.0.0.1:8000/pessoa/`
     return this.http.get<Atleta[]>(urlAPi);
   }
 

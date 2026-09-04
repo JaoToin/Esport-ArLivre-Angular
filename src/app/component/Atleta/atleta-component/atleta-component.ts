@@ -27,10 +27,15 @@ export class AtletaComponent {
     cidade = ''
     uf = ''
     data = ''
+    altura = 0 //
+    peso = 0 //
     editar = false
     idAtleta = 0
+    classificacao = '' //
+    resultado: number | null = null
+    imcAtleta = 0 //
 
-    //DECLARAÇÃO DO CONSTRUTOR
+  //DECLARAÇÃO DO CONSTRUTOR
     constructor(private atletaService: AtletaService, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
 
     //DECLARAÇÃO DE FUNÇÕES
@@ -57,12 +62,16 @@ export class AtletaComponent {
             this.cpf = objAtleta.cpf
             this.sexo = objAtleta.sexo
             this.cep = objAtleta.cep
-            this.rua_logradouro = objAtleta.rua
+            this.rua_logradouro = objAtleta.rua_logradouro
             this.bairro = objAtleta.bairro
             this.cidade = objAtleta.cidade
             this.uf = objAtleta.uf
             this.data = objAtleta.data_nascimento
+            this.altura = objAtleta.altura
+            this.peso = objAtleta.peso
 
+            this.imcAtleta = this.atletaService.CalcIMC(this.peso, this.altura); //
+            this.classificacao = this.atletaService.classificarIMC(this.imcAtleta); //
 
             this.cdr.detectChanges()
           }, error: (msgErro) => {
@@ -77,15 +86,17 @@ export class AtletaComponent {
       pessoaAtleta.cpf = this.cpf
       pessoaAtleta.sexo = this.sexo
       pessoaAtleta.cep = this.cep
-      pessoaAtleta.rua = this.rua_logradouro
+      pessoaAtleta.rua_logradouro = this.rua_logradouro
       pessoaAtleta.bairro = this.bairro
       pessoaAtleta.cidade = this.cidade
       pessoaAtleta.uf = this.uf
       pessoaAtleta.data_nascimento = this.data
+      pessoaAtleta.altura = this.altura
+      pessoaAtleta.peso = this.peso
 
 
 
-      
+
 
       if (!this.editar) {
         this.atletaService.adicionarAtleta(pessoaAtleta)
@@ -130,6 +141,8 @@ export class AtletaComponent {
         })
     }
 
+
+
     limpar() {
       this.nome = ''
       this.cpf = 0
@@ -140,6 +153,8 @@ export class AtletaComponent {
       this.cidade = ''
       this.uf = ''
       this.data = ''
+      this.altura = 0
+      this.peso = 0
     }
 
 
