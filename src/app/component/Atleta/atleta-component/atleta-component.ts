@@ -36,11 +36,11 @@ export class AtletaComponent {
     imcAtleta = 0 //
 
   //DECLARAÇÃO DO CONSTRUTOR
-    constructor(private atletaService: AtletaService, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
+    constructor(private atletaService: AtletaService, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { } //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //DECLARAÇÃO DE FUNÇÕES
     exibeDados() {
-      console.log(this.nome, this.data, this.cpf, this.sexo, this.rua_logradouro, this.bairro, this.cidade, this.uf)
+      console.log(this.nome, this.data, this.cpf, this.sexo, this.rua_logradouro, this.bairro, this.cidade, this.uf) //
     }
 
     ngOnInit() {
@@ -51,8 +51,7 @@ export class AtletaComponent {
         this.carregaCampo(this.idAtleta)
       }
 
-    }
-
+    } ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////^^
     carregaCampo(idAtleta: number) {
       this.atletaService.listarAtleta(idAtleta)
         .subscribe({
@@ -78,7 +77,7 @@ export class AtletaComponent {
             console.log("Erro ao Listar  o atleta ", msgErro)
           }
         })
-    }
+    } ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////^^
 
     enviaDadosAtleta() {
       const pessoaAtleta = new Pessoa()
@@ -97,7 +96,7 @@ export class AtletaComponent {
 
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       if (!this.editar) {
         this.atletaService.adicionarAtleta(pessoaAtleta)
           .subscribe({
@@ -124,6 +123,7 @@ export class AtletaComponent {
           })
 
       }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////^^
 
       this.limpar()
 
